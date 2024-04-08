@@ -15,13 +15,13 @@ Nous nous concentrerons sur les trois premières qui impliquent déjà pas mal d
 
 ## Étapes
 
-- créer une table pour contenir les informations de l’utilisateur (attention que le mot de passe doit être hashé. Voyez la fonction `password_hash()` dans la documentation de PHP) ;
-- créer les routes pour le login, le logout et l’enregistrement ;
-- créer les contrôleurs correspondants (en essayant de respecter les conventions des contrôleurs de ressources décrites dans la documentation de Laravel) ;
-- créer le modèle User, qui s’inspire très très fort du modèle Jiri ;
-- créer les validations nécessaires ;
-- créer les middlewares guest et authenticated afin de protéger les routes en fonction ;
-- créer les vues correspondates ;
+- ~~créer une table pour contenir les informations de l’utilisateur (attention que le mot de passe doit être hashé. Voyez la fonction `password_hash()` dans la documentation de PHP) ;~~
+- ~~créer les routes pour le login, le logout et l’enregistrement ;~~
+- ~~créer les contrôleurs correspondants (en essayant de respecter les conventions des contrôleurs de ressources décrites dans la documentation de Laravel) ;~~
+- ~~créer le modèle User, qui s’inspire très très fort du modèle Jiri ;~~
+- ~~créer les validations nécessaires ;~~
+- ~~créer les middlewares guest et authenticated afin de protéger les routes en fonction ;~~
+- ~~créer les vues correspondates ;~~
 
 ## Techniquement…
 

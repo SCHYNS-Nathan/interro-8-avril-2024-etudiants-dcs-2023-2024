@@ -40,6 +40,18 @@ class Router
         return $this;
     }
 
+    public function guest()
+    {
+        $this->routes[array_key_last($this->routes)]['middlewares'][] = 'guest';
+        return $this;
+    }
+
+    public function authenticated()
+    {
+        $this->routes[array_key_last($this->routes)]['middlewares'][] = 'authenticated';
+        return $this;
+    }
+
     public function only(string $who): Router
     {
         return $this;
@@ -83,6 +95,4 @@ class Router
         $controller = new $controller_name();
         $controller->{$method_name}();
     }
-
-
 }

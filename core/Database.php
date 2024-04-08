@@ -70,6 +70,17 @@ class Database extends PDO
         return $statement->fetch();
     }
 
+    public function findUser(string $email): bool|\stdClass
+    {
+        $sql = <<<SQL
+                SELECT * FROM users
+                         WHERE email = :email
+        SQL;
+        $statement = $this->prepare($sql);
+        $statement->execute(['email' => $email]);
+        return $statement->fetch();
+    }
+
     public function findOrFail(string $id): ?\stdClass
     {
         $jiri = $this->find($id);
@@ -111,7 +122,7 @@ class Database extends PDO
         return $statement->execute();
     }
 
-    public function create(array $data): bool
+    public function create($table, array $data): bool
     {
         $columns = implode(',', array_keys($data));
         $placeholders = implode(', ', array_map(static function ($key) {
@@ -119,7 +130,7 @@ class Database extends PDO
         }, array_keys($data)));
 
         $sql = <<<SQL
-            INSERT INTO jiris ($columns)
+            INSERT INTO $table ($columns)
             VALUES ($placeholders)
         SQL;
 

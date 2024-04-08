@@ -59,13 +59,12 @@ class JiriController
 
     #[NoReturn] public function store(): void
     {
-
         $data = Validator::check([
             'name' => 'required|min:3|max:255',
             'starting_at' => 'required|datetime',
         ]);
 
-        if ($this->jiri->create($data)) {
+        if ($this->jiri->create('jiris', $data)) {
             Response::redirect('/jiris');
         } else {
             Response::abort(Response::SERVER_ERROR);
